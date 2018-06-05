@@ -2,22 +2,36 @@ pragma solidity ^0.4.0;
 contract CarInsurance {
     
     address public customer; 
-    address public insurance_comapny;
+    address public insurance_company;
     address public resolver;
     uint public eligible_for_insurance = 0;
+    uint InsuranceCompanyset = 0;
+    uint resolverset = 0;
     
 constructor() public{
-    customer = 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c;
-    insurance_comapny = 0x14723A09ACff6D2A60DcdF7aA4AFf308FDDC160C;
-    resolver = 0x4B0897b0513fdC7C541B6d9D7E929C4e5364D2dB;
+    customer = msg.sender;
+}
+
+function setInsuranceCompany(address _InsuranceCompany) public{
+    if(InsuranceCompanyset == 0){
+        insurance_company = _InsuranceCompany;
+        InsuranceCompanyset = 1;
+    }
+}
+
+function setResolver(address _resolver) public{
+    if(resolverset == 0){
+        resolver = _resolver;
+        resolverset = 1;
+    }
 }
 
 function payPremium() public payable {
-    require(msg.value > 2 ether);
+    require(msg.value >= 0.02 ether);
 }
 
 function insuranceAmount() public payable {
-    require(msg.value > 20 ether);
+    require(msg.value >= 0.05 ether);
 }
     
 function claimInsurance() public{
