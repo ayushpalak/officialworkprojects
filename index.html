@@ -1,31 +1,38 @@
 <html>
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         
+        <script src="script.js"></script>
+
     </head>
     <body>
-        <div> 
-            <label> Click to deploy contract </label>
-        </div>
+        
         
         <div>
-             <button id = "deploybutton"> deploy </button>
+            <label> Customer Address:</label>  <input type="text" id = "input_customeraddress">                  
         </div>
         
-        <div>
-            <label> Customer Address:</label>  <input text="" id = "input_customeraddress">                  
-        </div>
         
-        <div>
-            <label> Contract Deployed at:</label>  <input text="" id = "input_contractaddress">
-        </div>
-
             <div>
-            <label> Insurance Company address: </label>  <input text="" id = "input_companyaddress">
+            <label> Insurance Company address: </label>  <input type="text" id = "input_companyaddress">
             </div>
 
             <div>
-            <label> Resolver address: </label>  <input text="" id = "input_resolveraddress">
+            <label> Resolver address: </label>  <input type="text" id = "input_resolveraddress">
             </div>
+
+            <div> 
+                <label> Click to deploy contract </label>
+            </div>
+
+            <div>
+                <button id = "deploybutton"> deploy </button>
+           </div>
+            
+           <div>
+            <label> Contract Deployed at:</label>  <input type="text" id = "input_contractaddress">
+        </div>
+
   
     </body>
 </html>

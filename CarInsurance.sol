@@ -6,10 +6,10 @@ contract CarInsurance {
     address public resolver;
     uint public eligible_for_insurance = 0;
     
-constructor() public{
-    customer = 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c;
-    insurance_comapny = 0x14723A09ACff6D2A60DcdF7aA4AFf308FDDC160C;
-    resolver = 0x4B0897b0513fdC7C541B6d9D7E929C4e5364D2dB;
+constructor(address _customer, address _insurance_company, address _resolver) public{
+    customer = msg.sender;
+    insurance_comapny = _insurance_company;
+    resolver = _resolver;
 }
 
 function payPremium() public payable {
